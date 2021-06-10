@@ -25,7 +25,7 @@ after_initialize do
   end
 
   add_to_class(:topic, :enhancement?) do 
-    custom_fields['enhancement'] == 'true'
+    custom_fields['urged_by_organization'] == 'true'
   end
 
   add_to_serializer(:topic_view, :is_enhancement) do
@@ -36,7 +36,7 @@ after_initialize do
     object.enhancement?
   end
 
-  TopicList.preloaded_custom_fields << "enhancement"
+  TopicList.preloaded_custom_fields << "urged_by_organization"
 
   
   require_dependency "application_controller"
