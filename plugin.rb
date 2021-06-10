@@ -24,6 +24,18 @@ after_initialize do
     end
   end
 
+  add_to_class(:topic, :enhancement?) do 
+    custom_fields['enhancement'] == 'true'
+  end
+
+  add_to_serializer(:topic_view, :is_enhancement) do
+    object.enhancement?
+  end
+
+  add_to_serializer(:topic_list_item, :is_enhancement) do
+    object.enhancement?
+  end
+
   
 
   
