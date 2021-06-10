@@ -36,7 +36,7 @@ after_initialize do
     object.enhancement?
   end
 
-  
+  TopicList.preloaded_custom_fields << "enhancement"
 
   
   require_dependency "application_controller"
