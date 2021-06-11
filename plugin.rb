@@ -29,7 +29,7 @@ after_initialize do
   end
 
   add_to_serializer(:topic_view, :is_enhancement) do
-    object.enhancement?
+    topic.enhancement?
   end
 
   add_to_serializer(:topic_list_item, :is_enhancement) do
