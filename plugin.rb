@@ -28,9 +28,26 @@ after_initialize do
     custom_fields['urged_by_organization'] == 'true'
   end
 
+  add_to_class(:user, :verified?) do
+    custom_fields['verified'] == 'true'
+  end
+
   add_to_serializer(:topic_view, :is_enhancement) do
     topic.enhancement?
   end
+
+  add_to_serializer(:basic_user, :is_verified) do
+    user.verified?
+  end
+
+  add_to_serializer(:user, :is_verified) do
+    user.verified?
+  end
+
+  add_to_serializer(:user_badge, :is_verified) do
+    user.verified?
+  end
+
 
   add_to_serializer(:topic_list_item, :is_enhancement) do
     object.enhancement?
