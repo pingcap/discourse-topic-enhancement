@@ -52,6 +52,9 @@ after_initialize do
     object.user&.verified?
   end
 
+  add_to_serializer(:user_action, :user_is_verified) do
+    User.where(id: user_id).first&.verified?
+  end
 
   add_to_serializer(:topic_list_item, :is_enhancement) do
     object.enhancement?
