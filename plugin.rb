@@ -48,6 +48,10 @@ after_initialize do
     user.verified?
   end
 
+  add_to_serializer(:post, :user_is_verified) do 
+    object.user&.verified?
+  end
+
 
   add_to_serializer(:topic_list_item, :is_enhancement) do
     object.enhancement?
