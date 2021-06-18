@@ -65,6 +65,7 @@ after_initialize do
   end
 
   TopicList.preloaded_custom_fields << "urged_by_organization"
+  CategoryList.preloaded_topic_custom_fields << "urged_by_organization"
 
   
   require_dependency "application_controller"
