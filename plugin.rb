@@ -36,6 +36,10 @@ after_initialize do
     topic.enhancement?
   end
 
+  add_to_serializer(:listable_topic, :is_enhancement) do
+    object.enhancement?
+  end
+
   add_to_serializer(:basic_user, :is_verified) do
     user.verified?
   end
