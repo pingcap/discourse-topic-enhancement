@@ -4,7 +4,6 @@ function initializeDiscourseTopicEnhancement(api) {
   
   // see app/assets/javascripts/discourse/lib/plugin-api
   // for the functions available via the api object
-  console.log('discourse-topic-enhancement')
   
 }
 
