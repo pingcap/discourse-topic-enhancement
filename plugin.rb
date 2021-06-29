@@ -32,6 +32,10 @@ after_initialize do
     custom_fields['verified'] == 'true'
   end
 
+  add_to_class(:post_action, :verified?) do 
+    user.verified?
+  end
+
   add_to_serializer(:topic_view, :is_enhancement) do
     topic.enhancement?
   end
